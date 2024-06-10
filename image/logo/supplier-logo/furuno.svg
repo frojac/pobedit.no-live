@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120.0332mm"
+   height="10.002484mm"
+   viewBox="0 0 120.0332 10.002484"
+   version="1.1"
+   id="svg1358"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="furuno.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1360"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.8148083"
+     inkscape:cx="183.49045"
+     inkscape:cy="-1.9285783"
+     inkscape:window-width="1876"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1355" />
+  <g
+     inkscape:label="Lag 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(21.485027,-94.567066)">
+    <path
+       d="m 93.5479,94.567238 h -7.503583 c -2.758722,0 -4.999919,2.239786 -4.999919,5.003447 0,2.760135 2.241197,4.998865 4.999919,4.998865 H 93.5479 c 2.763661,0 5.000272,-2.23873 5.000272,-4.998865 0,-2.763661 -2.236611,-5.003447 -5.000272,-5.003447 m -2.503311,7.001582 c 0,0.69285 -0.558094,1.25165 -1.246364,1.25165 -0.692503,0 -1.252714,-0.5588 -1.252714,-1.25165 v -3.999796 c 0,-0.689328 0.560211,-1.251656 1.252714,-1.251656 0.68827,0 1.246364,0.562328 1.246364,1.251656 z"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path1008"
+       inkscape:label="O" />
+    <path
+       d="M 60.537002,104.5694 V 94.567092 h 7.503583 l 2.500841,3.501319 v -3.501319 h 7.501467 V 104.5694 h -7.501467 l -2.500841,-3.50026 v 3.50026 z"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path996"
+       inkscape:label="N" />
+    <path
+       d="m 45.03475,104.5694 h 7.500761 c 2.763661,0 5.004152,-2.23873 5.004152,-4.998861 v -5.003447 h -6.503458 v 5.25145 c 0,1.244948 -1.008239,2.250718 -2.250369,2.250718 -1.243894,0 -2.249664,-1.00577 -2.249664,-2.250718 v -5.25145 h -6.501694 v 5.003447 c 0,2.760131 2.238728,4.998861 5.000272,4.998861"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path1000"
+       inkscape:label="U2" />
+    <path
+       d="m 34.368406,101.90943 c 1.782233,-0.5401 2.893836,-2.301169 2.62255,-4.140905 -0.271286,-1.837267 -1.850672,-3.201459 -3.707694,-3.201459 H 19.527398 v 10.002304 h 7.002639 v -2.50013 l 2.999316,2.50013 h 7.503583 z m -4.585405,-1.33879 h -3.252964 v -3.502379 h 3.252964 c 0.963789,0 1.749072,0.783166 1.749072,1.751189 0,0.968375 -0.785283,1.75119 -1.749072,1.75119"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path1004"
+       inkscape:label="R" />
+    <path
+       d="m 10.025684,99.818616 v -5.25145 h 6.502047 v 5.003447 c 0,2.760137 -2.238728,4.998857 -5.002389,4.998857 H 4.0221121 c -2.7590749,0 -4.99991921,-2.23872 -4.99991921,-4.998857 V 94.567166 H 5.5263564 v 5.25145 c 0,1.244954 1.0057694,2.250724 2.2496638,2.250724 1.2396611,0 2.2496638,-1.00577 2.2496638,-2.250724"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path988"
+       inkscape:label="U1" />
+    <path
+       d="M -21.485027,104.5694 V 94.567092 h 17.505538 v 2.501194 H -12.7312 v 2.00272 h 7.0026389 v 2.497664 H -12.7312 v 3.00073 z"
+       style="display:inline;fill:#2056ae;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
+       id="path992"
+       inkscape:label="F" />
+  </g>
+</svg>
