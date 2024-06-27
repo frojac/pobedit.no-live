@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #5e5e5e 0%, #dadada 15%, #f0f0f0 80%, #717171 95%, #afafaf 100%);
-    color: #ffffff; /* Text color for light text on dark background */
+    color: #3a3a3a; /* Text color for light text on dark background */
     min-height: 100vh;
     padding-bottom: 60px; /* Adjusted padding */
     box-sizing: border-box;
@@ -148,10 +148,11 @@ h2 {
     display:inline-block;
     text-decoration:none;
     text-align: center;
-    color:black;
+    color:#101010;
 }
 .figcaption {
     display: inline-block;
+    color: #101010;
 }
 
 a:link {
