@@ -59,12 +59,49 @@ body {
     display: inline-block;
     padding: 0.3em 0.6em;
     background: linear-gradient(to bottom, rgba(0, 0, 250, 1) 0%, rgba(140, 195, 255, 1) 15%, rgba(40, 140, 190, 1) 100%); /* Gradient background */
-    color: white;
+    color: #FFF;
     text-decoration: none;
     font-weight: bold;
-    z-index: 10;
     box-shadow: 0.3em 0.4em 0.4em rgba(0, 0, 0, 0.5);
     border-radius: 0 0 0.5em 0;
+    z-index: 10;
+}
+.button:hover {
+    background-color: #555;
+
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 90%;
+    background-color: #999;
+    min-width: 16em;
+    border-radius: 0.1em;
+    box-shadow: 0.3em 0.4em 0.4em rgba(0, 0, 0, 0.5);
+
+}
+.dropdown-content a {
+    color: #FFF;
+    padding: 0.4em 1.1em ;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-content a:hover {
+    background-color: #555;
+
+}
+/* Show dropdown when hovering over the parent button */
+.dropdown:hover .dropdown-content {
+    display: block;
+
 }
 .buttontop {
     display: inline-block;
@@ -207,12 +244,9 @@ td {
     text-align: center;
 }
 th {
-    border-top: 0.1em solid #000000;
     border-bottom: 0.1em solid #000000;
-    border-left: 0.1em solid #000000;
-    border-right: 0.1em solid #000000;
     padding: 0.05em;
-    text-align: center;
+    text-align: left;
     font-style: bold;
 }
 table {
@@ -223,40 +257,4 @@ div.sticky {
     top: 0;
 }
 
-.button:hover {
-    background-color: #555;
-    z-index: 10;
-}
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 9;
-}
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 90%;
-    background-color: #333;
-    min-width: 16em;
-    z-index: 8;
-    border-radius: 0.1em;
-    box-shadow: 0.3em 0.4em 0.4em rgba(0, 0, 0, 0.5);
-}
-.dropdown-content a {
-    color: white;
-    padding: 0.4em 1.1em ;
-    text-decoration: none;
-    display: block;
-    z-index: 9;
-}
-.dropdown-content a:hover {
-    background-color: #555;
-    z-index: 9;
-}
-/* Show dropdown when hovering over the parent button */
-.dropdown:hover .dropdown-content {
-    display: block;
-    z-index: 9;
-}
+
