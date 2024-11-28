@@ -210,11 +210,11 @@ p {
 }
 
 a:link {
-    color: #000000;
+    color: #0a0b58;
     text-decoration: none;
 }
 a:visited {
-    color: #2b2b2b;
+    color: #27275d;
     text-decoration: none;
 }
 a:hover {
@@ -255,5 +255,12 @@ div.sticky {
     position: sticky;
     top: 0;
 }
-
-
+.table-pr {
+    border: none;
+}
+.th-p {
+    border: none;
+    font-size: 1.4em;
+    text-align: left;
+    vertical-align: top;
+}
