@@ -18,6 +18,7 @@
     <link rel="apple-touch-icon" href="../image/icon/apple-touch-icon.png"><!-- 180×180 -->
     <link rel="stylesheet" href=../style.css>
     <link rel="manifest" href="../manifest.json">
+    <script src="../scriptaddcopy.js" defer></script>
 </head>
 <body>
     <header>
@@ -94,76 +95,134 @@
         <div>
         <h1> Polarlight produktliste </h1>
 
-        <h3> Benytt søkefunksjon i nettleser: (ctrl+F) <br>
-            Zoom i nettleser: (ctrl+scroll) <br>
-        Mobil nettleser søk: meny ->"Finn på siden"</h3>
-    </div>
-    <div  class="sticky">
-    <table>
-    <tr>
-        <th>Produktbilde_____________</th>
-        <th>Produktnummer</th>
-        <th>Produktnavn____________________________________________________________</th>
-        <th>Pris eks.mva</th>
-    </tr>
-    </table>
-    </div>
+        <h3>
+            Velkommen til Pobedit AS "offline" nettbutikk!<br><br>
+            Legg til produkter i skjemaet ved å trykke på knappen ved produktet. <br>
+            Du kan legge til mer informasjon i listen, som for eksempel antall eller andre notater du vil ha med. <br>
+            Når du er klar for å sende bestilling, kan du laste ned listen, du vil bli forespurt informasjon om deg.<br>
+            Ingen av feltene er påkrevd, men vi vil naturligvis spørre etter de vesentligste om de ikke er med.<br>
+            Informasjonen legges til filen, som du kan sende til oss som vedlegg i en epost. <br><br>
+            Det tas forbehold om prisendringer og feil, frakt kan tilkomme. Ved bestilling vil du alltid motta en bekreftelse når denne er behandlet. Ta gjerne kontakt om du lurer på noe. <br><br>
+            GDPR: Siden lagrer ingen informasjon om deg, det du laster ned forblir i din kontroll frem til du evt. sender filen til oss for intern bruk (bestilling/service). Vi deler ikke din informasjon med andre, om du ikke ber oss om det.<br><br>
+        </h3>
+        </div>
+
+        <div id="contentBox" class="content-box">
+            <h3>Tillagte produkter:</h3>
+            <div id="boxContent" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px; min-height: 100px;"></div>
+
+            <button id="copyBoxBtn">Kopier innhold</button>
+            <!-- Update to call the function to show the modal -->
+            <button id="downloadBtn">Last ned fil</button>
+            <input type="text" id="searchInput" placeholder="Søk i listen.." style="margin-bottom: 10px; padding: 5px; width: 200px;">
+        </div>
+        <div id="userInfoModal" style="display:none; z-index: 110;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Vennligst legg inn din informasjon:</h3>
+                <form id="userInfoForm">
+                <label for="userName">Navn:</label>
+                <input type="text" id="userName" name="userName">
+
+                <label for="userOrg">Org.nr:</label>
+                <input type="text" id="userOrg" name="userOrg">
+
+                <label for="userAdd">Addresse:</label>
+                <input type="text" id="userAdd" name="userAdd">
+
+                <label for="userPhone">Telefon:</label>
+                <input type="text" id="userPhone" name="userPhone">
+
+                <label for="userEmail">E-post:</label>
+                <input type="email" id="userEmail" name="userEmail">
+
+                <label for="userVessel">Fartøy:</label>
+                <input type="text" id="userVessel" name="userVessel">
+
+                <!-- This button should submit the form and trigger the download -->
+                <button type="button" onclick="downloadTextFile()">Last ned fil</button>
+                </form>
+            </div>
+        </div>
     <div>
     <table>
-    <tr>
-        <td>Produktbilde_____________</td>
-        <td>Produktnummer</td>
-        <td>Produktnavn____________________________________________________________</td>
-        <td>Pris eks.mva</td>
+    <thead>
+        <tr>
+            <th>Produktbilde</th>
+            <th>Produktnummer</th>
+            <th>Produktnavn</th>
+            <th>Pris eks.mva</th>
+            <th>Pris ink.mva</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
     </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lbl2.png width=auto height=150></td>
-        <td>400164</td>
-        <td> LBL 2 x 180W/24V LED BAUGLYS</td>
-        <td>9890</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lbl3.png width=auto height=150></td>
-        <td>400165</td>
-        <td> LBL 3 x 180W/24V LED BAUGLYS</td>
-        <td>14750</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lfl4.png width=auto height=150></td>
-        <td>400262</td>
-        <td> LFL4-240W- 230VAC 60 grader</td>
-        <td>13490</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lfl2.png width=auto height=150></td>
-        <td>400264</td>
-        <td> LFL2-120W-230VAC 60 grader</td>
-        <td>9490</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lfl2.png width=auto height=150></td>
-        <td>400265</td>
-        <td> LFL2-90W-24VDC 60 grader</td>
-        <td>9490</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/lfl4.png width=auto height=150></td>
-        <td>400269</td>
-        <td> LFL4-180W-24VDC-60grader</td>
-        <td>13490</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/tlp.png width=auto height=150></td>
-        <td>400113</td>
-        <td> TLP67S316 M/Led 24v</td>
-        <td>3460</td>
-    </tr>
-    <tr>
-        <td><img src=../polarlight/bilder/tlp.png width=auto height=150></td>
-        <td>400219</td>
-        <td> TLP67S316 Led 230V</td>
-        <td>3460</td>
-    </tr>
+<tr>
+<td><img src=../polarlight/bilder/lbl2.png width=auto height=150></td>
+<td>400164</td>
+<td> LBL 2 x 180W/24V LED BAUGLYS</td>
+<td>9890</td>
+<td>12362,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/lbl3.png width=auto height=150></td>
+<td>400165</td>
+<td> LBL 3 x 180W/24V LED BAUGLYS</td>
+<td>14750</td>
+<td>18437,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/lfl4.png width=auto height=150></td>
+<td>400262</td>
+<td> LFL4-240W- 230VAC 60 grader</td>
+<td>13490</td>
+<td>16862,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/lfl2.png width=auto height=150></td>
+<td>400264</td>
+<td> LFL2-120W-230VAC 60 grader</td>
+<td>9490</td>
+<td>11862,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/lfl2.png width=auto height=150></td>
+<td>400265</td>
+<td> LFL2-90W-24VDC 60 grader</td>
+<td>9490</td>
+<td>11862,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/lfl4.png width=auto height=150></td>
+<td>400269</td>
+<td> LFL4-180W-24VDC-60grader</td>
+<td>13490</td>
+<td>16862,5</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/tlp.png width=auto height=150></td>
+<td>400113</td>
+<td> TLP67S316 M/Led 24v</td>
+<td>3460</td>
+<td>4325</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../polarlight/bilder/tlp.png width=auto height=150></td>
+<td>400219</td>
+<td> TLP67S316 Led 230V</td>
+<td>3460</td>
+<td>4325</td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+    </tbody>
 </table>
     </div>
     </main>

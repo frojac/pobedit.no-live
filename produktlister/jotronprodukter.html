@@ -18,6 +18,7 @@
     <link rel="apple-touch-icon" href="../image/icon/apple-touch-icon.png"><!-- 180×180 -->
     <link rel="stylesheet" href=../style.css>
     <link rel="manifest" href="../manifest.json">
+    <script src="../scriptaddcopy.js" defer></script>
 </head>
 <body>
     <header>
@@ -94,406 +95,677 @@
     <div>
         <h1> Jotron produktliste </h1>
 
-        <h3> Benytt søkefunksjon i nettleser: (ctrl+F) <br>
-            Zoom i nettleser: (ctrl+scroll) <br>
-        Mobil nettleser søk: meny ->"Finn på siden"</h3>
-    </div>
-    <div  class="sticky">
-    <table>
-    <tr>
-        <th>Produktbilde_____________</th>
-        <th>Produktnummer</th>
-        <th>Produktnavn____________________________________________________________</th>
-    </tr>
-    </table>
-    </div>
+                <h3>
+            Velkommen til Pobedit AS "offline" nettbutikk!<br><br>
+            Legg til produkter i skjemaet ved å trykke på knappen ved produktet. <br>
+            Du kan legge til mer informasjon i listen, som for eksempel antall eller andre notater du vil ha med. <br>
+            Når du er klar for å sende bestilling, kan du laste ned listen, du vil bli forespurt informasjon om deg.<br>
+            Ingen av feltene er påkrevd, men vi vil naturligvis spørre etter de vesentligste om de ikke er med.<br>
+            Informasjonen legges til filen, som du kan sende til oss som vedlegg i en epost. <br><br>
+            Det tas forbehold om prisendringer og feil, frakt kan tilkomme. Ved bestilling vil du alltid motta en bekreftelse når denne er behandlet. Ta gjerne kontakt om du lurer på noe. <br><br>
+            GDPR: Siden lagrer ingen informasjon om deg, det du laster ned forblir i din kontroll frem til du evt. sender filen til oss for intern bruk (bestilling/service). Vi deler ikke din informasjon med andre, om du ikke ber oss om det.<br><br>
+        </h3>
+        </div>
+
+        <div id="contentBox" class="content-box">
+            <h3>Tillagte produkter:</h3>
+            <div id="boxContent" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px; min-height: 100px;"></div>
+
+            <button id="copyBoxBtn">Kopier innhold</button>
+            <!-- Update to call the function to show the modal -->
+            <button id="downloadBtn">Last ned fil</button>
+            <input type="text" id="searchInput" placeholder="Søk i listen.." style="margin-bottom: 10px; padding: 5px; width: 200px;">
+        </div>
+        <div id="userInfoModal" style="display:none; z-index: 110;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Vennligst legg inn din informasjon:</h3>
+                <form id="userInfoForm">
+                <label for="userName">Navn:</label>
+                <input type="text" id="userName" name="userName">
+
+                <label for="userOrg">Org.nr:</label>
+                <input type="text" id="userOrg" name="userOrg">
+
+                <label for="userAdd">Addresse:</label>
+                <input type="text" id="userAdd" name="userAdd">
+
+                <label for="userPhone">Telefon:</label>
+                <input type="text" id="userPhone" name="userPhone">
+
+                <label for="userEmail">E-post:</label>
+                <input type="email" id="userEmail" name="userEmail">
+
+                <label for="userVessel">Fartøy:</label>
+                <input type="text" id="userVessel" name="userVessel">
+
+                <!-- This button should submit the form and trigger the download -->
+                <button type="button" onclick="downloadTextFile()">Last ned fil</button>
+                </form>
+            </div>
+        </div>
     <div>
     <table>
-    <tr>
-        <td>Produktbilde______________</td>
-        <td>Produktnummer_</td>
-        <td>Produktnavn_____________________________________________________________</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
-        <td>85400</td>
-        <td>Tron AIS TR-8000 Display Unit (only compatible with 103650 MKII GPS transponder unit)</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>80322</td>
-        <td>Lightning Protector</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-86853-Antenna-SANAV-SA-200-GPS.png width=auto height=150></td>
-        <td>86853</td>
-        <td>Antenna SANAV SA-200 GPS</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-86870-Pilot-Cable-for-TR-8000-display_.png width=auto height=150></td>
-        <td>86870</td>
-        <td>Pilot Cable For TR-8000 Display</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>91794</td>
-        <td>Antenna VHF CXL 3-1LW Dipole</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/82484-Antenna-Procom-CXL-2-1LW_H-0-dBd.png width=auto height=150></td>
-        <td>82484</td>
-        <td>Antenna VHF CLX 2-1LW/H Dipole</td>
-    </tr>
-    <tr>
-        <td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
-        <td>99897</td>
-        <td>Programming of EPIRB</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>86854</td>
-        <td>Antenna Stainless Steel Stand SA-200 GPS</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-83010_Tron-SART20.png width=auto height=150></td>
-        <td>83010</td>
-        <td>Tron SART20 Radar Transponder complete w/bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-82900-Liferaft-Mounting-Pole-Tron-SART20.png width=auto height=150></td>
-        <td>82900</td>
-        <td>Tron SART20/AIS-SART Liferaft Mounting Pole</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-83010_Tron-SART20.png width=auto height=150></td>
-        <td>84229</td>
-        <td>Tron SART20 dummy demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-84845-Bracket-Lifeboat-Tron-SART20.png width=auto height=150></td>
-        <td>84845</td>
-        <td>Tron SART20/AIS-SART Lifeboat Bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-85216-FB-6-Bracket_with-protective-cover.png width=auto height=150></td>
-        <td>85216</td>
-        <td>FB-6 Bracket with Protective Cover</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>86024</td>
-        <td>PRU-50 Programmer</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>86041</td>
-        <td>Release Kit FB-6/FB-60/FB-40 (minimum sales qty 5)</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-86225-Battery-Kit-Tron-60S-60GPS.png width=auto height=150></td>
-        <td>86225</td>
-        <td>Battery Kit Tron 60S/60GPS</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Rechargeable-and-emergency-battery-for-Tron-TR30.png width=auto height=150></td>
-        <td>101036</td>
-        <td>Spare TR30 Rechargeable LiPo Battery</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-101038-Spare-TR30-Switching-Power-Supply-100-240V-for-RCH-30.png width=auto height=150></td>
-        <td>101038</td>
-        <td>Spare TR30 Switching power supply 100-240V for RCH-30</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-80414-Hydrostatic-Release-Mec-with-bolt-FB-5_FB-6.png width=auto height=150></td>
-        <td>80414</td>
-        <td>Hydrostatic Release Mec with Bolt FB5/FB6</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
-        <td>100800</td>
-        <td>Spare 40VDR FBH-40 Heating Bracket (without Docking Module)</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>88102</td>
-        <td>Spare 40VDR FB-40 Bracket (without Docking Module)</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-85621-FB-60-Bracket-with-protective-cover.png width=auto height=150></td>
-        <td>85621</td>
-        <td>FB-60 Bracket With Protective Cover</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-86218-Hydrostatic-Release-Kit-FB60_FB40_FBH40.png width=auto height=150></td>
-        <td>86218</td>
-        <td>Hydrostatic Release Kit FB60/FB40/FBH40/FB42/FBH42</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-86559-Manual-Bracket.png width=auto height=150></td>
-        <td>86559</td>
-        <td>MB-60 Manual Bracket for 60S/60GPS/60AIS</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-VHF-Radio.png width=auto height=150></td>
-        <td>87950</td>
-        <td>Tron TR30 GMDSS and Maritime VHF Radio with Charger and Rechargeable Battery</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-89449-Tron-TR30_Carry-Case.png width=auto height=150></td>
-        <td>89449</td>
-        <td>Accessories Carry Case TR30 </td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-101720-TR30-Radio-holder-RH-30.png width=auto height=150></td>
-        <td>101720</td>
-        <td>Spare TR30 GMDSS/AIR Radio Holder RH-30</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-19601-Tron-TR30-Headset-push-to-talk-module.png width=auto height=150></td>
-        <td>19601</td>
-        <td>Tron TR30 Headset push to talk module</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>100783</td>
-        <td>Spare 40VDR Bumper w/label (5 pcs)</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>100785</td>
-        <td>Spare 40VDR LAN Cable 2m</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-100946-Spare-40VDR-Silicone-grease-tube.png width=auto height=150></td>
-        <td>100946</td>
-        <td>Spare 40VDR  - WÃ¼rth Silicone grease tube</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>100947</td>
-        <td>Spare Packing Box 40VDR, Tron 40AIS, Tron 40VDR AIS</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>100948</td>
-        <td>Spare 40VDR Insertion for Packing Box</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-101034-Spare-kit-TR30-GMDSS-and-AIR.png width=auto height=150></td>
-        <td>101034</td>
-        <td>Spare Kit TR30 GMDSS/AIR</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Rechargeable-and-emergency-battery-for-Tron-TR30.png width=auto height=150></td>
-        <td>101035</td>
-        <td>Spare TR30 Emergency GMDSS Battery</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-Radio-battery-charger.png width=auto height=150></td>
-        <td>101037</td>
-        <td>Spare TR30 GMDSS Battery Charger RCH-30</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-98545_Tron-AIR.png width=auto height=150></td>
-        <td>101700</td>
-        <td>Tron TR30 AIR Handheld Emergency AM aeronautical radio</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>100941</td>
-        <td>Spare 40VDR Docking Module MkII</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-85037_Tron-AIS-SART.png width=auto height=150></td>
-        <td>85037</td>
-        <td>Tron AIS-SART complete with bulkhead bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-81341-Tron-TR30-Speaker-Microphone.png width=auto height=150></td>
-        <td>81341</td>
-        <td>Tron TR30 Speaker Microphone</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-85037_Tron-AIS-SART.png width=auto height=150></td>
-        <td>82244</td>
-        <td>Tron AIS-SART dummy demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-82615-Battery-SART20_AIS-SART-5-year-maint.-kit.png width=auto height=150></td>
-        <td>82615</td>
-        <td>Tron SART20/AIS-SART Battery, 5 years maint.kit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>83330</td>
-        <td>Tron 60GPS EPIRB with float free bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>83340</td>
-        <td>Tron 60GPS EPIRB with Manual Bracket</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>86145</td>
-        <td>Cable Patch 5m RJ45, Bucaneer Double for TR-8000</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
-        <td>103742</td>
-        <td>Spare 40VDR AIS EPIRB (without Storage Module)</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/103000-PELTOR-Basic-Headset-with-Headband.png width=auto height=150></td>
-        <td>103000</td>
-        <td>Peltor Basic Headset with Headband MT74H52A w/FLX2 cable</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Large-103400OF_.png width=auto height=150></td>
-        <td>103400OF</td>
-        <td>TR-910 Offshore Radio</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-VHF-Radio.png width=auto height=150></td>
-        <td>104061</td>
-        <td>Tron TR30 GMDSS & VHF dummy demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-98545_Tron-AIR.png width=auto height=150></td>
-        <td>104086</td>
-        <td>Tron TR30 AIR dummy demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
-        <td>103660</td>
-        <td>Tron AIS TR-8000 MkII Class A complete with GPS antenna</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
-        <td>103670</td>
-        <td>Tron AIS TR-8000 MkII complete IMO package</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
-        <td>103650</td>
-        <td>Tron AIS TR-8000 MkII GPS Transponder Unit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>103170</td>
-        <td>Tron 60AIS with float free bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-102918-Spare-TR30-Antenna-kit.png width=auto height=150></td>
-        <td>102917</td>
-        <td>Spare TR30 AIR Antenna Kit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-102918-Spare-TR30-Antenna-kit.png width=auto height=150></td>
-        <td>102918</td>
-        <td>Spare TR30 Antenna Kit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
-        <td>103340</td>
-        <td>Spare FBH-42 40AIS/40S MkII Heating bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>103350</td>
-        <td>Spare FB-42/FBH42 Front cover</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>103440</td>
-        <td>Spare 40VDR FB-40 Bracket Front Cover</td>
-    </tr>
-    <tr>
-        <td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
-        <td>CER CHAMBER</td>
-        <td>Document certified by Chamber of Commerce</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103180-Tron-60AIS-EPIRB-with-manual-bracket.png width=auto height=150></td>
-        <td>103180</td>
-        <td>Tron 60AIS with manual bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
-        <td>103210</td>
-        <td>Tron 40AIS with heating bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>103220</td>
-        <td>Tron 40AIS with float free bracket</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500-US</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103180-Tron-60AIS-EPIRB-with-manual-bracket.png width=auto height=150></td>
-        <td>103180-DMY</td>
-        <td>Tron 60AIS with manual bracket, dummy demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500-GB</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500-IS</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500-SE</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>103550</td>
-        <td>SBM-kit Tron 40VDR AIS Battery Module</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>104634</td>
-        <td>FB-60 Upgrade kit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
-        <td>104207</td>
-        <td>Tron 60AIS w/FF bracket, live demo</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
-        <td>104500-CA</td>
-        <td>Tron SA20 PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
-        <td>105188</td>
-        <td>Programming SA20PLB</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/softcarryPLB.png width=auto height=150></td>
-        <td>105251</td>
-        <td>Spare Tron SA20 PLB Carry Case Soft Kit</td>
-    </tr>
-    <tr>
-        <td><img src=../jotron/bilder/hardcarryPLB.png width=auto height=150></td>
-        <td>105256</td>
-        <td>Tron SA20 PLB Carry Case Hard Kit</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Produktbilde</th>
+            <th>Produktnummer</th>
+            <th>Produktnavn</th>
+            <th>Pris eks.mva</th>
+            <th>Pris ink.mva</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
+<td>85400</td>
+<td>Tron AIS TR-8000 Display Unit (only compatible with 103650 MKII GPS transponder unit)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>80322</td>
+<td>Lightning Protector</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-86853-Antenna-SANAV-SA-200-GPS.png width=auto height=150></td>
+<td>86853</td>
+<td>Antenna SANAV SA-200 GPS</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-86870-Pilot-Cable-for-TR-8000-display_.png width=auto height=150></td>
+<td>86870</td>
+<td>Pilot Cable For TR-8000 Display</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>91794</td>
+<td>Antenna VHF CXL 3-1LW Dipole</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/82484-Antenna-Procom-CXL-2-1LW_H-0-dBd.png width=auto height=150></td>
+<td>82484</td>
+<td>Antenna VHF CLX 2-1LW/H Dipole</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
+<td>99897</td>
+<td>Programming of EPIRB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>86854</td>
+<td>Antenna Stainless Steel Stand SA-200 GPS</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-83010_Tron-SART20.png width=auto height=150></td>
+<td>83010</td>
+<td>Tron SART20 Radar Transponder complete w/bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-82900-Liferaft-Mounting-Pole-Tron-SART20.png width=auto height=150></td>
+<td>82900</td>
+<td>Tron SART20/AIS-SART Liferaft Mounting Pole</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-83010_Tron-SART20.png width=auto height=150></td>
+<td>84229</td>
+<td>Tron SART20 dummy demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-84845-Bracket-Lifeboat-Tron-SART20.png width=auto height=150></td>
+<td>84845</td>
+<td>Tron SART20/AIS-SART Lifeboat Bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-85216-FB-6-Bracket_with-protective-cover.png width=auto height=150></td>
+<td>85216</td>
+<td>FB-6 Bracket with Protective Cover</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>86024</td>
+<td>PRU-50 Programmer</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>86041</td>
+<td>Release Kit FB-6/FB-60/FB-40 (minimum sales qty 5)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-86225-Battery-Kit-Tron-60S-60GPS.png width=auto height=150></td>
+<td>86225</td>
+<td>Battery Kit Tron 60S/60GPS</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Rechargeable-and-emergency-battery-for-Tron-TR30.png width=auto height=150></td>
+<td>101036</td>
+<td>Spare TR30 Rechargeable LiPo Battery</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-101038-Spare-TR30-Switching-Power-Supply-100-240V-for-RCH-30.png width=auto height=150></td>
+<td>101038</td>
+<td>Spare TR30 Switching power supply 100-240V for RCH-30</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-80414-Hydrostatic-Release-Mec-with-bolt-FB-5_FB-6.png width=auto height=150></td>
+<td>80414</td>
+<td>Hydrostatic Release Mec with Bolt FB5/FB6</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
+<td>100800</td>
+<td>Spare 40VDR FBH-40 Heating Bracket (without Docking Module)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>88102</td>
+<td>Spare 40VDR FB-40 Bracket (without Docking Module)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-85621-FB-60-Bracket-with-protective-cover.png width=auto height=150></td>
+<td>85621</td>
+<td>FB-60 Bracket With Protective Cover</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-86218-Hydrostatic-Release-Kit-FB60_FB40_FBH40.png width=auto height=150></td>
+<td>86218</td>
+<td>Hydrostatic Release Kit FB60/FB40/FBH40/FB42/FBH42</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-86559-Manual-Bracket.png width=auto height=150></td>
+<td>86559</td>
+<td>MB-60 Manual Bracket for 60S/60GPS/60AIS</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-VHF-Radio.png width=auto height=150></td>
+<td>87950</td>
+<td>Tron TR30 GMDSS and Maritime VHF Radio with Charger and Rechargeable Battery</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-89449-Tron-TR30_Carry-Case.png width=auto height=150></td>
+<td>89449</td>
+<td>Accessories Carry Case TR30 </td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-101720-TR30-Radio-holder-RH-30.png width=auto height=150></td>
+<td>101720</td>
+<td>Spare TR30 GMDSS/AIR Radio Holder RH-30</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-19601-Tron-TR30-Headset-push-to-talk-module.png width=auto height=150></td>
+<td>19601</td>
+<td>Tron TR30 Headset push to talk module</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>100783</td>
+<td>Spare 40VDR Bumper w/label (5 pcs)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>100785</td>
+<td>Spare 40VDR LAN Cable 2m</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-100946-Spare-40VDR-Silicone-grease-tube.png width=auto height=150></td>
+<td>100946</td>
+<td>Spare 40VDR  - Würth Silicone grease tube</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>100947</td>
+<td>Spare Packing Box 40VDR, Tron 40AIS, Tron 40VDR AIS</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>100948</td>
+<td>Spare 40VDR Insertion for Packing Box</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-101034-Spare-kit-TR30-GMDSS-and-AIR.png width=auto height=150></td>
+<td>101034</td>
+<td>Spare Kit TR30 GMDSS/AIR</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Rechargeable-and-emergency-battery-for-Tron-TR30.png width=auto height=150></td>
+<td>101035</td>
+<td>Spare TR30 Emergency GMDSS Battery</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-Radio-battery-charger.png width=auto height=150></td>
+<td>101037</td>
+<td>Spare TR30 GMDSS Battery Charger RCH-30</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-98545_Tron-AIR.png width=auto height=150></td>
+<td>101700</td>
+<td>Tron TR30 AIR Handheld Emergency AM aeronautical radio</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>100941</td>
+<td>Spare 40VDR Docking Module MkII</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-85037_Tron-AIS-SART.png width=auto height=150></td>
+<td>85037</td>
+<td>Tron AIS-SART complete with bulkhead bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-81341-Tron-TR30-Speaker-Microphone.png width=auto height=150></td>
+<td>81341</td>
+<td>Tron TR30 Speaker Microphone</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-85037_Tron-AIS-SART.png width=auto height=150></td>
+<td>82244</td>
+<td>Tron AIS-SART dummy demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-82615-Battery-SART20_AIS-SART-5-year-maint.-kit.png width=auto height=150></td>
+<td>82615</td>
+<td>Tron SART20/AIS-SART Battery, 5 years maint.kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>83330</td>
+<td>Tron 60GPS EPIRB with float free bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>83340</td>
+<td>Tron 60GPS EPIRB with Manual Bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>86145</td>
+<td>Cable Patch 5m RJ45, Bucaneer Double for TR-8000</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
+<td>103742</td>
+<td>Spare 40VDR AIS EPIRB (without Storage Module)</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/103000-PELTOR-Basic-Headset-with-Headband.png width=auto height=150></td>
+<td>103000</td>
+<td>Peltor Basic Headset with Headband MT74H52A w/FLX2 cable</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Large-103400OF_.png width=auto height=150></td>
+<td>103400OF</td>
+<td>TR-910 Offshore Radio</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-TR30-GMDSS-and-Maritime-VHF-Radio.png width=auto height=150></td>
+<td>104061</td>
+<td>Tron TR30 GMDSS & VHF dummy demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-98545_Tron-AIR.png width=auto height=150></td>
+<td>104086</td>
+<td>Tron TR30 AIR dummy demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
+<td>103660</td>
+<td>Tron AIS TR-8000 MkII Class A complete with GPS antenna</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
+<td>103670</td>
+<td>Tron AIS TR-8000 MkII complete IMO package</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-AIS-TR-8000-MkII_Class-A.png width=auto height=150></td>
+<td>103650</td>
+<td>Tron AIS TR-8000 MkII GPS Transponder Unit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>103170</td>
+<td>Tron 60AIS with float free bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-102918-Spare-TR30-Antenna-kit.png width=auto height=150></td>
+<td>102917</td>
+<td>Spare TR30 AIR Antenna Kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-102918-Spare-TR30-Antenna-kit.png width=auto height=150></td>
+<td>102918</td>
+<td>Spare TR30 Antenna Kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
+<td>103340</td>
+<td>Spare FBH-42 40AIS/40S MkII Heating bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>103350</td>
+<td>Spare FB-42/FBH42 Front cover</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>103440</td>
+<td>Spare 40VDR FB-40 Bracket Front Cover</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
+<td>CER CHAMBER</td>
+<td>Document certified by Chamber of Commerce</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103180-Tron-60AIS-EPIRB-with-manual-bracket.png width=auto height=150></td>
+<td>103180</td>
+<td>Tron 60AIS with manual bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103210-Tron-40AIS-EPIRB-float-free-with-heating-bracket.png width=auto height=150></td>
+<td>103210</td>
+<td>Tron 40AIS with heating bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103220-Tron-40AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>103220</td>
+<td>Tron 40AIS with float free bracket</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500-US</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103180-Tron-60AIS-EPIRB-with-manual-bracket.png width=auto height=150></td>
+<td>103180-DMY</td>
+<td>Tron 60AIS with manual bracket, dummy demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500-GB</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500-IS</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500-SE</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>103550</td>
+<td>SBM-kit Tron 40VDR AIS Battery Module</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td></td>
+<td>104634</td>
+<td>FB-60 Upgrade kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-103170-Tron-60AIS-EPIRB-with-float-free-bracket.png width=auto height=150></td>
+<td>104207</td>
+<td>Tron 60AIS w/FF bracket, live demo</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/Picture-Tron-SA20-PLB.png width=auto height=150></td>
+<td>104500-CA</td>
+<td>Tron SA20 PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../image/icon/instruksjonsbok.svg width=auto height=150></td>
+<td>105188</td>
+<td>Programming SA20PLB</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/softcarryPLB.png width=auto height=150></td>
+<td>105251</td>
+<td>Spare Tron SA20 PLB Carry Case Soft Kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+<tr>
+<td><img src=../jotron/bilder/hardcarryPLB.png width=auto height=150></td>
+<td>105256</td>
+<td>Tron SA20 PLB Carry Case Hard Kit</td>
+<td></td>
+<td></td>
+<td><button class="add-btn" onclick="addToBox(this)">Legg til</button></td>
+</tr>
+    </tbody>
 </table>
     </div>
     </main>
