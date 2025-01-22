@@ -43,25 +43,7 @@ function addHeadersToBox(table) {
   boxContent.innerHTML += headerText.slice(0, -2) + '<br>';  // Remove trailing ' | ' and add a new line
 }
 
-// Function to copy all content in the editable box to the clipboard
-document.getElementById('copyBoxBtn').addEventListener('click', function() {
-  const boxContent = document.getElementById('boxContent');
-  const contentText = boxContent.textContent.trim();
 
-  if (contentText === '') {
-    alert('No content to copy!');
-    return;
-  }
-
-  const tempInput = document.createElement('input');
-  tempInput.value = contentText;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand('copy');
-  document.body.removeChild(tempInput);
-
-  alert('All content copied to clipboard!');
-});
 
 // Add event listeners to the "Add" buttons (delegated event listener)
 document.body.addEventListener('click', function(event) {

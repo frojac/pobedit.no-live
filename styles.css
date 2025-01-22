@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #d8d8d8;
@@ -17,7 +18,7 @@ a {
     position: static;
     top: 0em;
     left: 0em;
-    width: 100%;
+    width: 100vw;
     background-color: #333;
     padding: 0em 0em;
     text-align: left;
@@ -260,7 +261,7 @@ p {
 }
 /* Table styles */
 table,thead,tbody,tfoot,tr,th,td,p {
-    font-family:"Arial"; font-size:x-small
+    font-family:"Arial"; font-size:1em;
 }
 a.comment-indicator:hover + comment {
     background:#ffd; position:absolute; display:block; border:0.05em solid black; padding:0em;
@@ -287,6 +288,7 @@ th {
 }
 table {
     border-collapse: collapse;
+    margin-left: 1em;
 }
 table thead tr th {
     background-color: #686868;
@@ -329,12 +331,22 @@ div.sticky {
 }
 
 .content-box {
-  width: 48em;
+  width: 100vw;
+  max-width: 48em;
   margin-top: 1em;
+  margin-left: 1em;
   padding: 1em;
   background-color: #6b326f;
   border: 0.2em solid #dd0004;
   border-radius: 1em;
+}
+@media (max-width: 57em) {
+    .content-box {
+        margin-left: 0;
+    }
+    table {
+        margin-left: 0em;
+    }
 }
 
 .content-box h3 {
@@ -349,7 +361,7 @@ div.sticky {
   min-height: 2em;
 }
 
-.copy-box-btn {
+#downloadBtn {
   padding: 5px 10px;
   font-size: 14px;
   background-color: #007BFF;
@@ -360,7 +372,7 @@ div.sticky {
   transition: background-color 0.3s;
 }
 
-.copy-box-btn:hover {
+#downloadBtn:hover {
   background-color: #0056b3;
 }
 #userInfoModal {
@@ -463,4 +475,21 @@ form button:hover {
     font-size: 1em;
     line-height: 1.5;
     text-align: center;
+}
+@media (max-width: 67em) {
+    #contact-banner {
+        display: block; /* Change to block (vertical layout) for smaller screens */
+        padding: 1em 0; /* Add padding to the top and bottom for spacing */
+        text-align: left; /* Align text to the left */
+    }
+
+    #contact-banner span {
+        display: block; /* Make each span take a full line */
+        margin-bottom: 0.5em; /* Space between items */
+    }
+
+    #contact-banner p {
+        text-align: left; /* Align text to the left on smaller screens */
+        margin-top: 1em; /* Add some spacing above paragraph text */
+    }
 }
