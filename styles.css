@@ -259,6 +259,29 @@ p {
     width: 60em;
     height: auto;
 }
+main ul {
+    list-style-type: none;  /* Default bullet style disc */
+    margin-left: 0.1em; /* Adds left margin for outer <ul> */
+    padding-left: 0.1em; /* Inset padding for outer <ul> */
+}
+
+main ul ul {
+    list-style-type: none; /* Hollow bullet style for nested circle <ul> */
+    padding-left: 1em;  /* Adjust this to control the inset amount */
+    margin-left: 1em;   /* Adjust this to control the space from parent <ul> */
+}
+main ul li::before {
+    content: "➢"; /* Unicode arrow character */
+    margin-right: 0.1em; /* Space between the arrow and the list item */
+    color: #031761; /* Change color if desired */
+    font-size: 1.5em;
+}
+main ul ul li::before {
+    content: "➣"; /* Unicode down arrow for nested list items */
+    margin-right: 0.1em; /* Space between the arrow and the list item */
+    color: #0000ff;
+    font-size: 1em; /* Adjust size of nested arrow */
+}
 /* Table styles */
 table,thead,tbody,tfoot,tr,th,td,p {
     font-family:"Arial"; font-size:1em;
