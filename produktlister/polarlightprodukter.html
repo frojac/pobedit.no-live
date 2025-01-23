@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pobedit AS</title>
     <meta name="description" content="Pobedit AS skipselektronikk, Marin elektronikk">
-    <meta name="keywords" content="Furuno, Simrad, Jotron, Olex, Sailorsmate, Skipselektronikk, Elektronikk, Antenne, Radio, VHF, Fiskerisporing, VMS, ERS, Søkelys, Flomlys, Navigasjonslys, Ullklær, Kirkenes, Landstrøm, Fjernkontroll, Overvåkning, Defa, Plugin, Skipsutstyr, Polarlight">
-    <meta property="og:image" content="../image/icon.jpg">
-    <meta property="og:image:type" content="../image/jpg">
+    <meta name="keywords" content="Furuno, Scanmar, Simrad, Jotron, Olex, Sailorsmate, Fangstr, NorVMS, iFisk, Sealight, Norselight, Hella, Defa, Victron, Actisense, Em-trak, Skipselektronikk, Elektronikk, Antenne, Radio, VHF, Fiskerisporing, VMS, ERS, Søkelys, Flomlys, Navigasjonslys, Ullklær, Kirkenes, Sør-Varanger, Øst-Finnmark, Finnmark, Varangerbotn, Bugøynes, Vadsø, Kiberg, Vardø, Landstrøm, Fjernkontroll, Overvåkning, Defa, Plugin, Skipsutstyr, Polarlight, Bråtens">
+    <meta property="og:image" content="../image/logo/logot.png">
+    <meta property="og:image:type" content="../image/png">
     <meta property="og:image:width" content="436">
     <meta property="og:image:height" content="228">
     <meta property="og:description" content="Pobedit AS Skipselektronikk, Marin elektronikk">
@@ -15,84 +15,116 @@
     <meta name="theme-color" content="#00007f">
     <link rel="icon" href="../favicon.ico" sizes="32x32">
     <link rel="icon" href="../image/icon/icon.svg" type="image/svg+xml">
+    <link rel"logo" href="../image/logo/logot.png" type="image/png">
     <link rel="apple-touch-icon" href="../image/icon/apple-touch-icon.png"><!-- 180×180 -->
-    <link rel="stylesheet" href=../style.css>
     <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../scriptnav.js" defer></script>
     <script src="../scriptaddcopy.js" defer></script>
 </head>
 <body>
-    <header>
-        <div id="top-banner">
-            <a href="pobedit.no" class="logo"><img src="../image/logo/logot.svg" alt="Pobedit Skipselektronikk" width="300" height="auto"> </a>
-            <div id=toptext-box>
-                <a class="toptext"> Velkommen til en hyggelig handel! </a>
-                <br>
-                <a class="toptext"> Nå med mye lurt på lager </a>
-            </div>
-            <br><br>
+<header>
+    <div id="top-banner">
+        <a href="https://www.pobedit.no" class="logo"><img src="../image/logo/logot.svg" alt="Pobedit Skipselektronikk" width="300" height="auto"> </a>
+        <div id=toptext-box>
+            <a class="toptext"> Velkommen til en hyggelig handel! </a>
+            <br>
+            <a class="toptext"> Nå med mye lurt på lager </a>
         </div>
-    </header>
-    <main>
+        <br><br>
+    </div>
+    <nav class="navbar">
         <div>
-            <a href="../index.html" class="button">Hjem</a>
-            <div class="dropdown">
-                <a href="#" class="button">Furuno</a>
-                <div class="dropdown-content">
-                    <a href="../furuno/furuno.html">Furuno presentasjon</a>
-                    <a href="../kontaktoss.html">Furuno Support</a>
-                    <a href="furunoprodukter.html">Furuno produkter</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="button">Jotron</a>
-                <div class="dropdown-content">
-                    <a href="../jotron/jotron-sbm.html">Jotron SBM</a>
-                    <a href="../jotron/plb-nkom.html">PLB Nkom søknadsprosess</a>
-                    <a href="../jotron/soknadplb.html">PLB Nkom søknadsveiledning</a>
-                    <a href="jotronprodukter.html">Jotron produkter</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="button">Polarlight</a>
-                <div class="dropdown-content">
-                    <a href="../polarlight/polarlight.html">Polarlight</a>
-                    <a href="polarlightprodukter.html">Polarlight produkter</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="button">Bråtens</a>
-                <div class="dropdown-content">
-                    <a href="../bratens/bratens.html">Bråtens</a>
-                    <a href="bratensprodukter.html">Bråtens produkter</a>
-                </div>
-            </div>
-            <div class="dropdown">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html" class="button">Hjem</a></li>
+
+            <li class="dropdown">
+                <a href="#">Furuno <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../furuno/furuno.html">Furuno presentasjon</a></li>
+                    <li><a href="../kontaktoss.html">Furuno Support</a></li>
+                    <li><a href="furunoprodukter.html">Furuno produkter</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Jotron <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../jotron/jotron-sbm.html">Jotron SBM</a></li>
+                    <li><a href="../jotron/plb-nkom.html">PLB Nkom søknadsprosess</a></li>
+                    <li><a href="../jotron/soknadplb.html">PLB Nkom søknadsveiledning</a></li>
+                    <li><a href="jotronprodukter.html">Jotron produkter</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Polarlight <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../polarlight/polarlight.html">Polarlight</a></li>
+                    <li><a href="polarlightprodukter.html">Polarlight produkter</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Bråtens <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../bratens/bratens.html">Bråtens</a></li>
+                    <li><a href="bratensprodukter.html">Bråtens produkter</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
                 <a href="../fiskerisporing/fiskerisporing.html" class="button">Fiskerisporing</a>
-                <div class="dropdown-content">
-                    <a href="../fiskerisporing/fiskerisporing.html">Fiskerisporing</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="button">Produktlister</a>
-                <div class="dropdown-content">
-                    <a href="jotronprodukter.html">Jotron produkter</a>
-                    <a href="furunoprodukter.html">Furuno produkter</a>
-                    <a href="polarlightprodukter.html">Polarlight produkter</a>
-                    <a href="bratensprodukter.html">Bråtens produkter</a>
-                    <a href="defaprodukter.html">Defa produkter</a>
-                    <a href="victronprodukter.html">Victron produkter</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#" class="button">Kontakt oss</a>
-                <div class="dropdown-content">
-                    <a href="../kontaktoss.html">Kontakt oss</a>
-                    <a href="../kontaktformanual.html">Forespørsel om manualer</a>
-                    <a href="../lovkrav/lovkrav.html">Lover og regler</a>
-                </div>
-            </div>
+                <ul class="dropdown-menu">
+                    <li><a href="../fiskerisporing/fiskerisporing.html">Fiskerisporing</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Produktlister <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="jotronprodukter.html">Jotron produkter</a></li>
+                    <li><a href="furunoprodukter.html">Furuno produkter</a></li>
+                    <li><a href="polarlightprodukter.html">Polarlight produkter</a></li>
+                    <li><a href="bratensprodukter.html">Bråtens produkter</a></li>
+                    <li><a href="defaprodukter.html">Defa produkter</a></li>
+                    <li><a href="victronprodukter.html">Victron produkter</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">Kontakt oss <span class="indicator-container">
+                    <object class="indicator-svg" type="image/svg+xml" data="../indicator.svg"></object>
+                </span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../kontaktoss.html">Kontakt oss</a></li>
+                    <li><a href="../kontaktformanual.html">Forespørsel om manualer</a></li>
+                    <li><a href="../lovkrav/lovkrav.html">Lover og regler</a></li>
+                    <li><a href="../kart.html">Kart</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div>
+    </nav>
+</header>
+<main>
+    <div>
         <h1> Polarlight produktliste </h1>
 
         <h3>
@@ -101,49 +133,47 @@
             Du kan legge til mer informasjon i listen, som for eksempel antall eller andre notater du vil ha med. <br>
             Når du er klar for å sende bestilling, kan du laste ned listen, du vil bli forespurt informasjon om deg.<br>
             Ingen av feltene er påkrevd, men vi vil naturligvis spørre etter de vesentligste om de ikke er med.<br>
-            Informasjonen legges til filen, som du kan sende til oss som vedlegg i en epost. <br><br>
-            Det tas forbehold om prisendringer og feil, frakt kan tilkomme. Ved bestilling vil du alltid motta en bekreftelse når denne er behandlet. Ta gjerne kontakt om du lurer på noe. <br><br>
-            GDPR: Siden lagrer ingen informasjon om deg, det du laster ned forblir i din kontroll frem til du evt. sender filen til oss for intern bruk (bestilling/service). Vi deler ikke din informasjon med andre, om du ikke ber oss om det.<br><br>
+            Informasjonen legges til tekstfilen automatisk,<br><br>
+            som du kan sende til oss som vedlegg i en <a href="mailto:post@pobedit.no"> e-post.</a> <br><br>
+            Det tas forbehold om prisendringer og feil, frakt kan tilkomme.<br>
+            Ved bestilling vil du alltid motta en bekreftelse når denne er behandlet.<br>
+            Ta gjerne kontakt om du lurer på noe. <br><br>
+            GDPR: Siden lagrer ingen informasjon om deg,<br>
+            det du laster ned forblir i din kontroll frem til du evt. sender filen til oss for intern bruk (bestilling/service).<br>
+            Vi deler ikke din informasjon med andre, om du ikke ber oss om det.<br><br>
         </h3>
-        </div>
+    </div>
 
-        <div id="contentBox" class="content-box">
-            <h3>Tillagte produkter:</h3>
-            <div id="boxContent" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px; min-height: 100px;"></div>
-
-            <button id="copyBoxBtn">Kopier innhold</button>
-            <!-- Update to call the function to show the modal -->
-            <button id="downloadBtn">Last ned fil</button>
-            <input type="text" id="searchInput" placeholder="Søk i listen.." style="margin-bottom: 10px; padding: 5px; width: 200px;">
-        </div>
-        <div id="userInfoModal" style="display:none; z-index: 110;">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h3>Vennligst legg inn din informasjon:</h3>
-                <form id="userInfoForm">
+    <div id="contentBox" class="content-box">
+        <h3>Tillagte produkter:</h3><br>
+        <h3>Rediger teksten i boksen under, legg til kommentarer og evt. antall.</h3>
+        <div id="boxContent" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px; min-height: 100px;"></div>
+        <!-- Update to call the function to show the modal -->
+        <button id="downloadBtn">Last ned tekstfil</button>
+        <input type="text" id="searchInput" placeholder="Søk i listen under.." style="margin-bottom: 10px; padding: 5px; width: 200px;">
+    </div>
+    <div id="userInfoModal" style="display:none; z-index: 110;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Vennligst legg inn din informasjon:</h3>
+            <form id="userInfoForm">
                 <label for="userName">Navn:</label>
                 <input type="text" id="userName" name="userName">
-
                 <label for="userOrg">Org.nr:</label>
                 <input type="text" id="userOrg" name="userOrg">
-
                 <label for="userAdd">Addresse:</label>
                 <input type="text" id="userAdd" name="userAdd">
-
                 <label for="userPhone">Telefon:</label>
                 <input type="text" id="userPhone" name="userPhone">
-
                 <label for="userEmail">E-post:</label>
                 <input type="email" id="userEmail" name="userEmail">
-
                 <label for="userVessel">Fartøy:</label>
                 <input type="text" id="userVessel" name="userVessel">
-
                 <!-- This button should submit the form and trigger the download -->
-                <button type="button" onclick="downloadTextFile()">Last ned fil</button>
-                </form>
-            </div>
+                <button type="button" onclick="downloadTextFile()">Last ned tekstfil</button>
+            </form>
         </div>
+    </div>
     <div>
     <table>
     <thead>
@@ -157,7 +187,6 @@
         </tr>
     </thead>
     <tbody>
-    </tr>
 <tr>
 <td><img src=../polarlight/bilder/lbl2.png width=auto height=150></td>
 <td>400164</td>
@@ -225,15 +254,14 @@
     </tbody>
 </table>
     </div>
-    </main>
-    <footer>
-        <br>
-        <div id="signature">
-            <a> Design laget av Pobedit AS 2024 </a>
-        </div>
-        <div id="contact-banner">
-            <p><span>Kontakt oss:</span> <span>E-post: <a href="mailto:post@pobedit.no"> post@pobedit.no </a> </span><span> Tel: <a href="tel:+4790670110"> +47 906 70 110 </a> </span><span> Besøk oss: <a href=https://maps.app.goo.gl/fLdFqfH6VNQHLBiJ6 target="_blank"> Hans Wæggers vei  15, 9901 Kirkenes </a> </span><a href="#" class="buttontop">Til toppen</a>  </p>
-        </div>
-    </footer>
-  </body>
+</main>
+<footer>
+    <div>
+        <br><p> Design laget av Pobedit AS 2025 </p><br>
+    </div>
+    <div id="contact-banner">
+        <p><span>Kontakt oss:</span> <span>E-post: <a href="mailto:post@pobedit.no" target="_blank"> post@pobedit.no </a> </span><span> Tel: <a href="tel:+4790670110"> +47 906 70 110 </a> </span><span> Besøk oss: <a href=https://maps.app.goo.gl/fLdFqfH6VNQHLBiJ6 target="_blank"> Hans Wæggers vei  15, 9901 Kirkenes </a> </span><a href="#" class="buttontop">Til toppen</a>  </p>
+    </div>
+</footer>
+</body>
 </html>

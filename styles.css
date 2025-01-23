@@ -296,11 +296,16 @@ table thead tr th {
     z-index: 100;
     top: 0;
 }
+table tbody td:nth-child(3) {
+    min-width: 10em;  /* Minimum width for the 3rd column */
+    max-width: 15em;
+    white-space: normal;
+}
 .highlight-row {
       background-color: #aa0000;
     }
 .highlight-row td {
-      font-size: 4em; /* Set the font size for the text */
+      font-size: 3em; /* Set the font size for the text */
 }
 div.sticky {
     position: sticky;
