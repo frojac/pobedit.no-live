@@ -1,7 +1,7 @@
 {
     "name": "Pobedit Skipselektronikk",
     "short_name": "Pobedit",
-    "start_url": ".",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#07e",
     "description": "Din leverandør av skipselektronikk",
