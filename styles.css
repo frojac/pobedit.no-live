@@ -1,10 +1,8 @@
-/* Global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -14,42 +12,65 @@ body {
 a {
     text-decoration: none;
 }
+
+main {
+  max-width: 60rem;
+}
+
 #top-banner {
     position: static;
-    top: 0em;
-    left: 0em;
+    top: 0rem;
+    left: 0rem;
     width: 100vw;
     background-color: #333;
-    padding: 0em 0em;
+    padding: 0rem 0rem;
     text-align: left;
     background: linear-gradient(to bottom, rgba(0, 0, 250, 1) 0%, rgba(140, 195, 255, 1) 15%, rgba(40, 140, 190, 1) 100%); /* Gradient background */
     color: white; /* Text color */
-    box-shadow: 0 0.5em 0.3em rgba(0, 0, 0, 0.5); /* Shadow effect */
+    box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.5); /* Shadow effect */
     overflow-x: auto;
     z-index: 11;
 }
-.logo {
+header .logo {
     position: relative;
-    top: 1.5em;
-    left: 1em;
+    top: 1rem;
+    left: 1rem;
 }
+
+header img.logo {
+    width: 19rem;
+    max-width: 19rem;
+}
+
+
+header img.nkom-logo {
+    width: auto;
+    max-width: 6rem;
+}
+
+header .nkom-logo {
+    position: relative;
+    top: 1.5rem;
+    left: 30rem;
+}
+
 #toptext-box {
     position: relative;
-    top: -2em;
-    left: 0em;
-    width: 20em;
-    height: 0.3em;
+    top: -2rem;
+    left: 0rem;
+    width: 20rem;
+    height: 0.3rem;
     background-color: ;
-    margin-top: 0em;
-    margin-left: 25em; /* Adjust this value to set the desired offset */
+    margin-top: 0rem;
+    margin-left: 25rem; /* Adjust this value to set the desired offset */
 }
 .toptext {
-    margin-left: 0em;
-    top: 0em;
-    left: 0em;
-    padding: 0em 0em; /* Add padding for better visibility */
+    margin-left: 0rem;
+    top: 0rem;
+    left: 0rem;
+    padding: 0rem 0rem; /* Add padding for better visibility */
     text-align: left; /* Center-align text */
-    font-size: 1em; /* Adjust font size */
+    font-size: 1rem; /* Adjust font size */
     white-space: nowrap; /* Prevent text from wrapping */
     overflow-x: auto; /* Enable horizontal scrolling if text overflows */
 }
@@ -60,13 +81,13 @@ a {
     justify-content: flex-start;
     align-items: center;
     background: linear-gradient(to bottom, rgba(0, 0, 250, 1) 0%, rgba(140, 195, 255, 1) 15%, rgba(40, 140, 190, 1) 100%);
-    padding: 0.3em 1em;
-    box-shadow: 0 0.5em 0.3em rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 1rem;
+    box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
 }
 
 .navbar .logo a {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -76,28 +97,28 @@ a {
 }
 
 .nav-links li {
-    margin: 0 1em;
+    margin: 0 1rem;
     position: relative;
 }
 
 .nav-links a {
     color: white;
-    font-size: 1em;
+    font-size: 1rem;
     transition: color 0.3s;
     display: flex;
     align-items: center;
 }
 
 .nav-links a:hover {
-    color: #ff6347;
+    color: #ff6048;
 }
 
 /* Indicator (>) inside SVG with rotation */
 .indicator-container {
     display: inline-block;
     position: relative;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
 }
 
 .indicator-svg {
@@ -109,13 +130,13 @@ a {
 .indicator {
     width: 0;
     height: 0;
-    border-left: 1em solid transparent;
-    border-right: 1em solid transparent;
-    border-top: 1em solid white; /* Triangle pointer (>) */
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid white; /* Triangle pointer (>) */
     position: absolute;
     top: 0;
     left: 100%;
-    margin-left: 0.4em;
+    margin-left: 0.4rem;
 }
 
 /* Dropdown menu */
@@ -125,9 +146,9 @@ a {
     top: 130%;
     left: 0;
     background-color: #444;
-    box-shadow: 0 0.5em 0.3em rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
     display: none;  /* Start hidden */
-    width: 12em;
+    width: 12rem;
     padding: 0;
     text-align: left;
 }
@@ -139,14 +160,14 @@ a {
 
 .dropdown-menu a {
     color: white;
-    font-size: 1em;
-    padding: 0;
+    font-size: 1rem;
+    padding: 0.2rem;
     display: block;
     text-align: left;
 }
 
 .dropdown-menu a:hover {
-    background-color: #ff6347;
+    background-color: #b54632;
 }
 
 /* Mobile menu toggle */
@@ -154,28 +175,28 @@ a {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 0.3em;
+    gap: 0.3rem;
 }
 
 .menu-toggle span {
-    width: 2em;
-    height: 0.4em;
+    width: 2rem;
+    height: 0.4rem;
     background-color: #888;
-    border-radius: 0.1em;
+    border-radius: 0.1rem;
 }
 
 /* Responsive styles */
-@media (max-width: 57em) {
+@media (max-width: 57rem) {
     .nav-links {
         display: none;
         width: 100%;
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 10em;
+        top: 10rem;
         left: 0;
-        padding: 1em 0;
-        box-shadow: 0 0.5em 0.3em rgba(0, 0, 0, 0.5);
+        padding: 1rem 0;
+        box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.5);
     }
 
     .nav-links.active {
@@ -183,7 +204,7 @@ a {
     }
 
     .nav-links li {
-        margin: 0.3em 0;
+        margin: 0.3rem 0;
         text-align: center;
     }
 
@@ -209,7 +230,7 @@ a {
 }
 
 /* Desktop dropdown click behavior */
-@media (min-width: 57em) {
+@media (min-width: 57rem) {
     .dropdown.active .dropdown-menu {
         display: block;
     }
@@ -220,98 +241,130 @@ a {
     }
 }
 header {
-    margin-bottom: 2em; /* Adding margin to the element above */
+    margin-bottom: 2rem; /* Adding margin to the element above */
 }
 /* Text formatting body */
 
 h1 {
     color: #101010;
-    margin-left: 2em;
+    margin-left: 2rem;
     font-weight: bold;
-    font-size: 2.4em;
+    font-size: 2.4rem;
 }
 h2 {
     color: #151515;
-    margin-left: 1.3em;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-left: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-style: bold;
-    font-size: 1.7em;
+    font-size: 1.7rem;
 }
 h3 {
     color: #151515;
-    margin-left: 1.3em;
+    margin-left: 1.3rem;
     font-style: italic;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+}
+h4 {
+    color: #151515;
+    margin-left: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-style: bold;
+    font-size: 1.1rem;
 }
 p {
     color: #151515;
-    margin-left: 1.3em;
+    margin-left: 1.3rem;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1rem;
 }
 .t1 {
     color: #2a2a2a;
     font-style: ;
-    font-size: 1em;
-    padding: 1em;
-    margin-left: 3em;
-    width: 60em;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    width: 60rem;
     height: auto;
 }
 main ul {
     list-style-type: none;  /* Default bullet style disc */
-    margin-left: 0.1em; /* Adds left margin for outer <ul> */
-    padding-left: 0.1em; /* Inset padding for outer <ul> */
+    margin-left: 0.1rem; /* Adds left margin for outer <ul> */
+    padding-left: 0.1rem; /* Inset padding for outer <ul> */
 }
 
 main ul ul {
     list-style-type: none; /* Hollow bullet style for nested circle <ul> */
-    padding-left: 1em;  /* Adjust this to control the inset amount */
-    margin-left: 1em;   /* Adjust this to control the space from parent <ul> */
+    padding-left: 1rem;  /* Adjust this to control the inset amount */
+    margin-left: 1rem;   /* Adjust this to control the space from parent <ul> */
 }
 main ul li::before {
     content: "➢"; /* Unicode arrow character */
-    margin-right: 0.1em; /* Space between the arrow and the list item */
+    padding-left: 2rem;  /* Adjust this to control the inset amount */
+    margin-right: 0.5rem; /* Space between the arrow and the list item */
     color: #031761; /* Change color if desired */
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 main ul ul li::before {
     content: "➣"; /* Unicode down arrow for nested list items */
-    margin-right: 0.1em; /* Space between the arrow and the list item */
+    margin-right: 0.5rem; /* Space between the arrow and the list item */
     color: #0000ff;
-    font-size: 1em; /* Adjust size of nested arrow */
+    font-size: 1rem; /* Adjust size of nested arrow */
 }
+
+main ol {
+    list-style: decimal;
+    padding-left: 3rem;
+}
+
+details {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f8f8f8;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+details[open] {
+  background: #f0f0f0;
+}
+
 /* Table styles */
 table,thead,tbody,tfoot,tr,th,td,p {
-    font-family:"Arial"; font-size:1em;
+    font-family:"Arial"; font-size:1rem;
 }
 a.comment-indicator:hover + comment {
-    background:#ffd; position:absolute; display:block; border:0.05em solid black; padding:0em;
+    background:#ffd; position:absolute; display:block; border:0.05rem solid black; padding:0rem;
 }
 a.comment-indicator {
-    background:red; display:inline-block; border:0.05em solid black; width:0.5em; height:0.5em;
+    background:red; display:inline-block; border:0.05rem solid black; width:0.5rem; height:0.5rem;
 }
 comment {
     display:none;
 }
 td {
-    border-top: 0.05em solid #000000;
-    border-bottom: 0.05em solid #000000;
-    border-left: 0.05em solid #000000;
-    border-right: 0.05em solid #000000;
-    padding: 0.05em;
+    border-top: 0.05rem solid #000000;
+    border-bottom: 0.05rem solid #000000;
+    border-left: 0.05rem solid #000000;
+    border-right: 0.05rem solid #000000;
+    padding: 0.05rem;
     text-align: left;
 }
 th {
-    border-bottom: 0.1em solid #000000;
-    padding: 0.05em;
+    border-bottom: 0.1rem solid #000000;
+    padding: 0.05rem;
     text-align: left;
     font-style: bold;
 }
 table {
     border-collapse: collapse;
-    margin-left: 1em;
+    margin-left: 1rem;
 }
 table thead tr th {
     background-color: #686868;
@@ -320,15 +373,15 @@ table thead tr th {
     top: 0;
 }
 table tbody td:nth-child(3) {
-    min-width: 10em;  /* Minimum width for the 3rd column */
-    max-width: 15em;
+    min-width: 10rem;  /* Minimum width for the 3rd column */
+    max-width: 15rem;
     white-space: normal;
 }
 .highlight-row {
       background-color: #aa0000;
     }
 .highlight-row td {
-      font-size: 3em; /* Set the font size for the text */
+      font-size: 3rem; /* Set the font size for the text */
 }
 div.sticky {
     position: sticky;
@@ -339,7 +392,7 @@ div.sticky {
 }
 .th-p {
     border: none;
-    font-size: 1.4em;
+    font-size: 1.4rem;
     text-align: left;
     vertical-align: top;
 }
@@ -360,20 +413,20 @@ div.sticky {
 
 .content-box {
   width: 100vw;
-  max-width: 48em;
-  margin-top: 1em;
-  margin-left: 1em;
-  padding: 1em;
+  max-width: 48rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 1rem;
   background-color: #6b326f;
-  border: 0.2em solid #dd0004;
-  border-radius: 1em;
+  border: 0.2rem solid #dd0004;
+  border-radius: 1rem;
 }
-@media (max-width: 57em) {
+@media (max-width: 57rem) {
     .content-box {
         margin-left: 0;
     }
     table {
-        margin-left: 0em;
+        margin-left: 0rem;
     }
 }
 
@@ -381,12 +434,61 @@ div.sticky {
     color: #fff
 }
 
+main img.div {
+  width: min(100%, 60rem);
+  height: auto;
+  display: block;
+}
+
+main img.partner-logo {
+  width: 20rem;
+  height: auto;
+  max-width: 20rem;
+  max-height: 5rem;
+  display: block;
+  margin-left: 0;
+}
+
+main img.ins {
+    width: auto;
+    max-width: 4rem;
+}
+
+
+.partner-section {
+  max-width: 60rem;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.partners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.partner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+@media (max-width: 700px) {
+  .partners {
+    grid-template-columns: 1fr;
+  }
+}
+
 #boxContent {
-  margin-bottom: 2em;
-  padding: 1em;
+  margin-bottom: 2rem;
+  padding: 1rem;
   background-color: #fff;
-  border: 0.2em solid #ddd;
-  min-height: 2em;
+  border: 0.2rem solid #ddd;
+  min-height: 2rem;
 }
 
 #downloadBtn {
@@ -464,60 +566,60 @@ form button:hover {
 /* Footer styles */
 .signature {
     position: relative;
-    width: 20em;
-    left: 4em;
-    padding: 1em;
+    width: 20rem;
+    left: 4rem;
+    padding: 1rem;
     color: #151515;
-    font-size: 0.7em;
-    bottom: 1em;
+    font-size: 0.7rem;
+    bottom: 1rem;
 }
 .buttontop {
     display: inline-block;
-    margin: 0 0.8em;
-    padding: 0.3em 0.3em;
+    margin: 0 0.8rem;
+    padding: 0.3rem 0.3rem;
     background: linear-gradient(to top, rgba(85, 85, 85, 0.3), rgba(0, 0, 0, 0.3)); /* Set gradient background with transparency */
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
 }
 #contact-banner {
     position: relative; /* Fixed position at the bottom of the viewport */
-    bottom: 0em;
-    left: 0em;
+    bottom: 0rem;
+    left: 0rem;
     width: 100%; /* Full width */
     background: linear-gradient(to bottom, rgba(0, 0, 250, 0.7) 0%, rgba(0, 144, 200, 0.5) 10%, rgba(0, 120, 120, 0.5) 100%); /* Adjust colors as needed */
-    padding: 0em 0em; /* Add padding for better visibility */
+    padding: 0rem 0rem; /* Add padding for better visibility */
     text-align: center; /* Center-align text */
     box-sizing: border-box; /* Include padding and border in the width */
-    box-shadow: 0 -0.1em 0.3em rgba(0, 0, 0, 0.5); /* Add a shadow for better separation from content */
-    font-size: 1em; /* Adjust font size */
+    box-shadow: 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.5); /* Add a shadow for better separation from content */
+    font-size: 1rem; /* Adjust font size */
     white-space: nowrap; /* Prevent text from wrapping */
     /*overflow-x: auto; /* Enable horizontal scrolling if text overflows */
 }
 #contact-banner span {
-    margin-right: 2em; /* Adjust this value to set the desired space between text */
+    margin-right: 2rem; /* Adjust this value to set the desired space between text */
     color: white; /* Example of styling applied to spans */
 }
 #contact-banner p {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.5;
     text-align: center;
 }
-@media (max-width: 67em) {
+@media (max-width: 67rem) {
     #contact-banner {
         display: block; /* Change to block (vertical layout) for smaller screens */
-        padding: 1em 0; /* Add padding to the top and bottom for spacing */
+        padding: 1rem 0; /* Add padding to the top and bottom for spacing */
         text-align: left; /* Align text to the left */
     }
 
     #contact-banner span {
         display: block; /* Make each span take a full line */
-        margin-bottom: 0.5em; /* Space between items */
+        margin-bottom: 0.5rem; /* Space between items */
     }
 
     #contact-banner p {
         text-align: left; /* Align text to the left on smaller screens */
-        margin-top: 1em; /* Add some spacing above paragraph text */
+        margin-top: 1rem; /* Add some spacing above paragraph text */
     }
 }

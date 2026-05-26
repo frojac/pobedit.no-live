@@ -160,6 +160,68 @@ function downloadTextFile() {
   closeModal();
 }
 
+function sendEmail() {
+
+  // Collect user info
+  const userInfo = collectUserInfoFromForm();
+
+  // Get product/content text
+  const textContent = document.getElementById('boxContent').innerText.trim();
+
+  // Current page URL
+  const currentPageURL = window.location.href;
+
+  // Build dynamic subject
+  let subject = 'Produktforespørsel';
+
+  // Add name and vessel if available
+  if (userInfo.name !== "Not Provided") {
+    subject += ` - ${userInfo.name}`;
+  }
+
+  if (userInfo.vessel !== "Not Provided") {
+    subject += ` (${userInfo.vessel})`;
+  }
+
+  // Build email body
+  const body =
+`Bestiller:
+
+Navn: ${userInfo.name}
+Org.nr: ${userInfo.org}
+Adresse: ${userInfo.add}
+Telefon: ${userInfo.phone}
+E-post: ${userInfo.email}
+Fartøy: ${userInfo.vessel}
+
+----------------------------------
+
+Produkter / kommentarer:
+
+${textContent}
+
+----------------------------------
+
+Side URL:
+${currentPageURL}
+`;
+
+  // Company email
+  const companyEmail = 'post@pobedit.no';
+
+  // Create mailto link
+  const mailtoLink =
+    `mailto:${companyEmail}`
+    + `?subject=${encodeURIComponent(subject)}`
+    + `&body=${encodeURIComponent(body)}`;
+
+  // Open user's mail client
+  window.location.href = mailtoLink;
+
+  // Optional: close modal after opening mail client
+  closeModal();
+}
+
 // Close the modal
 function closeModal() {
   document.getElementById('userInfoModal').style.display = 'none';
