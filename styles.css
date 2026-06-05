@@ -65,7 +65,7 @@ header img.nkom-logo {
     display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 60rem) {
 
     #top-banner {
         flex-direction: column;
@@ -96,7 +96,7 @@ header img.nkom-logo {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 40rem) {
     header img.nkom-logo {
         display: none;
     }
@@ -214,7 +214,7 @@ header img.nkom-logo {
 }
 
 /* Responsive styles */
-@media (max-width: 57rem) {
+@media (max-width: 60rem) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -313,7 +313,7 @@ p {
     font-size: 1rem;
     padding: 1rem;
     margin-left: 3rem;
-    width: 60rem;
+    max-width: 60rem;
     height: auto;
 }
 main ul {
@@ -440,8 +440,8 @@ div.sticky {
 }
 
 .content-box {
-  width: 100vw;
-  max-width: 48rem;
+  width: 100%;
+  max-width: 60rem;
   margin-top: 1rem;
   margin-left: 1rem;
   padding: 1rem;
@@ -449,7 +449,7 @@ div.sticky {
   border: 0.2rem solid #dd0004;
   border-radius: 1rem;
 }
-@media (max-width: 57rem) {
+@media (max-width: 60rem) {
     .content-box {
         margin-left: 0;
     }
@@ -505,7 +505,7 @@ main img.ins {
   gap: 1rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 60rem) {
   .partners {
     grid-template-columns: 1fr;
   }
@@ -550,7 +550,7 @@ main img.ins {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 400px;
+  max-width: 40rem;
 }
 
 .close {
@@ -630,7 +630,7 @@ form button:hover {
     padding: 0.5rem;
 }
 
-@media (max-width: 57rem) {
+@media (max-width: 60rem) {
     #contact-banner {
         display: block;
         padding: 0.5rem;
